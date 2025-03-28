@@ -1,0 +1,85 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: box-shadow 0.3s;
+}
+
+.wrapper:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.form {
+    margin-top: 20px;
+}
+
+.input-container {
+    text-align: center; /* Center the input and button */
+    margin-bottom: 20px; /* Increased margin for spacing */
+}
+
+.input-container input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #007BFF;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.3s;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#generateButton, #copyButton, #printButton, #downloadButton {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 14px;
+    margin: 5px;
+}
+
+#generateButton:hover, #copyButton:hover, #printButton:hover, #downloadButton:hover {
+    background-color: #0056b3;
+}
+
+.barcode {
+    text-align: center;
+}
+
+svg {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto; /* Center the barcode horizontally */
+}
+
+.buttons {
+    margin-top: 20px;
+    text-align: center;
+}
