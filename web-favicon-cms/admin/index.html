@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Upload Favicon</title>
+    <link rel="icon" href="http://localhost:5000/favicon.ico">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        input {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Upload New Favicon</h2>
+    <input type="file" id="faviconInput" accept="image/x-icon">
+    <button onclick="uploadFavicon()">Upload</button>
+
+    <script>
+        function uploadFavicon() {
+            const fileInput = document.getElementById('faviconInput');
+            if (!fileInput.files.length) {
+                alert("Please select a file!");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append("favicon", fileInput.files[0]);
+
+            fetch("http://localhost:5000/upload", {
+                method: "POST",
+                body: formData,
+            })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    setTimeout(() => location.reload(), 1000);
+                })
+                .catch(error => console.error("Error:", error));
+        }
+    </script>
+</body>
+
+</html>
